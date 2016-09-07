@@ -1,5 +1,7 @@
 from setuptools import setup
 
+from sqlite_kernel import __version__
+
 
 def readme():
     with open('README.rst') as f:
@@ -7,7 +9,7 @@ def readme():
 
 
 setup(name='sqlite-kernel',
-      version='0.1',
+      version=__version__,
       description='Sqlite kernel for Jupyter',
       long_description=readme(),
       classifiers=[
@@ -23,6 +25,7 @@ setup(name='sqlite-kernel',
       packages=['sqlite_kernel'],
       install_requires=[
           'pysqlite==2.8.3',
+          'ipykernel==4.5.0'
       ],
       test_suite='nose.collector',
       tests_require=['nose', 'nose-cover3'],
